@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanBites</title>
+    <link rel="stylesheet" href="/website/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PanBites</div>
+            <ul class="nav-links">
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="recipepage.html">Recipes</a></li>
+                <li><a href="pantrypage.html">Pantry List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Welcome Section with Background Image -->
+        <section id="home-section">
+
+                <div class="slider">
+
+                    <div class="slide">
+                        <h1 class="heading">Welcome to PanBites</h1>
+                        <p class="subtitle">Organize your pantry and stay healthy with personalized recipe recommendations!</p>
+                        <!-- <button class="btn btn-primary">Get Started</button> -->
+                        <a href="pantrypage.html" class="btn btn-primary">Get Started</a>
+                    </div>
+
+                    <div class="slide">
+                        <h1 class="heading">Tips for Staying Healthy</h1>
+                        <ul class="tips-list">
+                            <li>Include a variety of foods in your diet</li>
+                            <li>Stay hydrated with plenty of water</li>
+                            <li>Exercise regularly for physical and mental wellness</li>
+                            <li>Make sure to get plenty of sleep</li>
+                        </ul>
+                    </div>
+
+                    <div class="slide">
+                        <h1 class="heading">Discover New Recipes</h1>
+                        <p class="subtitle">Can not decide what to cook? No worries, we got you! All you have to do is add ingredients to the pantry list and generate healthy recipes made just for you.</p>
+                    </div>
+
+                    <div class="slide">
+                        <h1 class="heading">Trivia Questions!</h1>
+                        <div class="questions">
+                            <p class="subtitle">1. Does an orange always has the same number of slices?</p>
+                            <p class="subtitle">2. What is the name of the green cooking banana?</p>
+                            <p class="subtitle">3. What type of meat is highest in iron?</p>
+                            <p class="subtitle">4. What makes fruit sweet?</p>
+                            <p class="subtitle">5. Which vegetable has the highest percentage of water?</p>
+                        </div>
+                        <p class="answers">1.no  2.plantain  3.red meat  4.fructose  5.cucumber</p>
+                    </div>
+
+                </div>
+
+                <button class="left arrow" id="prevBtn">&#10094;</button>
+                <button class="right arrow" id="nextBtn">&#10095;</button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PanBites. All rights reserved.</p>
+    </footer>
+
+    <script src="/TestPanBites/src/main/resources/static/js/app.js"></script>
+</body>
+</html>
