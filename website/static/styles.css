@@ -1,10 +1,576 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-</body>
-</html>
+
+
+/* Body Styling */
+body {
+    /* background-color: #b3ebf2; */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    padding-top: 50px;
+}
+
+
+
+/* Header Styling */
+header {
+    background-color: #1f2937;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #f8b400;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 600;
+    position: fixed;
+    margin-left: 10px;
+    left: 0;
+}
+
+.btn:hover {
+    background-color: #d99a00;
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    align-items: bottom;
+    margin-top: 20px;
+    background-color: #f8b400;
+    padding: 10px 20px;
+    font-size: 1em;
+    position: absolute;
+    bottom: 20px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/* Welcome Section with Background Image */
+#home-section {
+    background-image: url('/website/static/images/Health.webp'); /* Replace with the actual image URL */
+    background-size: cover;
+    background-position: center;
+    height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: overlay;
+}
+
+
+
+/* Slide Information Styling */
+
+.heading {
+    position: fixed;
+    top: 200px;
+}
+
+
+.tips-list {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 35px;
+    margin-left: 40px;
+}
+
+.tips-list li {
+    display: absolute;
+    text-align: left;
+}
+
+
+.questions {
+    margin-top: 35px;
+}
+
+.subtitle {
+    font-size: 0.7em;
+    color: #f0f0f0;
+}
+
+.answers {
+    position: absolute;
+    font-size: 0.4em;
+    color: #ff746c;
+    transform: rotate(180deg);
+    bottom: 0;
+    right: 0;
+}
+
+
+
+/* Slider styling */
+.slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.slide {
+    display: none; /* Hide all slides except the active one */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    flex-direction: column;
+    position: relative; /* Make the slide a relative container */
+    height: 100%; /* Make sure it takes the full height */
+    text-align: center;
+}
+
+.slide.active {
+    display: flex; /* Show the active slide */
+}
+
+
+
+/* Arrow buttons styling */
+.arrow {
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.arrow.left {
+    left: 325px;
+}
+
+.arrow.right {
+    right: 325px;
+}
+
+.arrow:hover {
+    background-color: #f8b400;
+}
+
+
+
+/* Quick Links Styling */
+#quick-links {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.link-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: #333;
+    font-size: 1.3em;
+    text-decoration: none;
+    width: 30%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.link-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Footer Styling */
+footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+/* searching ingredients bar and button */
+.search-container {
+    position: absolute;
+    left: 48%;
+    display: flex;
+    justify-content: center;
+    top: 32px;
+}
+
+
+.search-input {
+    border-radius: 25px;
+    height: 40px;
+    width: 700px;
+    position: fixed;
+    padding: 10px;
+    margin-bottom: 30%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+.search-input::placeholder {
+    color: white;
+}
+
+.search-btn {
+    position: fixed;
+    height: 36px;
+    width: 70px;
+    margin-left: 52%;
+    margin-top: 4px;
+    background-color: #0492c2;
+    color: white;
+}
+
+.search-btn:hover {
+    background-color: #f8b400;
+}
+
+
+
+
+/* Search Result Pop-Up Styling */
+#search-result {
+    display: none;
+    font-size: 20px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    width: fit-content;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+
+
+
+/* pantry background */
+#pantry-section {
+    background-image: url('/website/static/images/ingredients.avif');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+
+
+/* list of ingredients box */
+.list-of-items {
+    padding: 8px;
+    border-radius: 10px;
+    width: 55%;
+    height: 70%;
+    max-height: 76%;
+    margin-bottom: 10px;
+    top: 90px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    position: absolute;
+    overflow-y: auto;
+}
+
+
+/* add ingredients */
+.add-item-btn {
+    position: absolute;
+    height: 30px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0 10px;
+    top: 104px;
+    right: 360px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.add-item-btn:hover {
+    background-color: #f8b400;
+}
+
+
+
+
+/* Popup Overlay */
+.popup-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+}
+
+
+/* Form Styling */
+#add-item-form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#add-item-form input[type="text"],
+#add-item-form select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+#add-item-form .quantity-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+
+#add-item-form .quantity-btn {
+    border: none;
+    background-color: #0492c2;
+    color: white;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#add-item-form .quantity-btn:hover {
+    background-color: #f8b400;
+}
+
+#add-item-form input[type="number"] {
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 15px;
+}
+
+#add-item-form .save-btn {
+    padding: 8px;
+    background-color: #0492c2;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    /* transition: background-color 0.3s; */
+}
+
+#add-item-form .save-btn:hover {
+    background-color: #f8b400;
+}
+
+
+/* close button for the pop up add item */
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 26px;
+    color: black;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f8b400;
+}
+
+
+
+/* added items in the list */
+.items-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    margin-top: 26px;
+    margin-right: 18%;
+    margin-left: 50px;
+}
+
+.item-name-header, .item-category-header, .item-quantity-header {
+    flex: 1;
+    text-align: center;
+}
+
+.ingredients-added {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredient-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 2px;
+    margin-right: 18%;
+    margin-left: 50px;
+}
+
+.ingredient-item span {
+    flex: 1;
+    text-align: center;
+}
+
+
+
+/* Edit and Delete Button Styling */
+.button-container {
+    /* display: ;
+    margin-right: 20px;
+    position: relative;
+    right: 100px; */
+
+
+    position: absolute;
+    right: 10px;
+    display: flex;
+    gap: 4px;
+}
+
+.edit-btn, .delete-btn {
+    margin-right: 8px;
+    padding: 5px 10px;
+    background-color: #0492c2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #f8b400;
+}
+
+.delete-btn:hover {
+    background-color: #e74c3c;
+}
+
+.ingredient-added {
+    position: relative;
+}
+
+
+
+/* generate recipe button */
+
+.generate-recipe-btn {
+    position: absolute;
+    text-align: center;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #0492c2;
+    color: white;
+    cursor: pointer;
+}
+
+
+.generate-recipe-btn:hover {
+    background-color: #f8b400;
+}

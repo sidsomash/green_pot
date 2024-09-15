@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanBites</title>
+    <link rel="stylesheet" href="/website/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PanBites</div>
+            <ul class="nav-links">
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="recipepage.html">Recipes</a></li>
+                <li><a href="pantrypage.html">Pantry List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Pantry List Section -->
+        <section id="pantry-section">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="pantry-search" placeholder="search for a pantry item" class="search-input">
+                <button type="button" class="search-btn">Search</button>
+            </div>
+
+            <p id="search-result"></p>
+
+
+            <!-- add item into the list -->
+            <div class="add-item-container"></div>
+
+                <button type="button" id="add-item-btn" class="add-item-btn">+ add item</button>
+
+                <div id="popup" class="popup-container">
+
+                    <div class="popup-content">
+                        <span class="close-btn">&times;</span>
+
+                        <form id="add-item-form">
+                            <input type="text" id="item-name" name="item-name" placeholder="Name of item" required>
+
+                            <label for="item-category">Category:</label>
+                            <select id="item-category" name="item-category" required>
+                                <option value="" disabled selected>Select the category</option>
+                                <option value="vegetable">Vegetable</option>
+                                <option value="fruit">Fruit</option>
+                                <option value="dairy">Dairy</option>
+                                <option value="meat">Meat</option>
+                                <option value="grain">Grain</option>
+                                <option value="spice">Spice</option>
+                                <option value="other">Other</option>
+                            </select>
+
+                            <div class="quantity-wrapper">
+                                <button type="button" class="quantity-btn minus-btn">-</button>
+                                <input type="number" id="item-quantity" name="item-quantity" min="1" value="1" readonly>
+                                <button type="button" class="quantity-btn plus-btn">+</button>
+                            </div>
+                    
+                            <button type="save" class="save-btn">Save</button>
+                        </form>
+                    </div>
+
+                  </div>
+
+            </div>
+
+            <div class="list-of-items">
+                <div class="items-header">
+                    <span class="item-name-header">Name</span>
+                    <span class="item-category-header">Category</span>
+                    <span class="item-quantity-header">Quantity</span>
+                </div>
+
+                <ul class="ingredients-added">
+                </ul>
+
+            </div>
+
+            <div class="generate-recipe-container"></div>
+                    <a href="recipepage.html" class="generate-recipe-btn">Generate Recipe</a>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PanBites. All rights reserved.</p>
+    </footer>
+
+    <script src="/TestPanBites/src/main/resources/static/js/app.js"></script>
+</body>
+</html>
